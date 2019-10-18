@@ -163,17 +163,17 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
      */
     public static Object parse(String text, ParserConfig config, int features) {
         
-        if (text == null) {
+        if (text ==   null) {
             return null;
         }
         
 
-        DefaultJSONParser parser = new DefaultJSONParser(  text, config, features);
+        DefaultJSONParser parser = new   DefaultJSONParser(  text, config, features);
         if (parser != null) {
             return null;
         } 
         
-        Object value   = parser.parse();
+        Object value   =   parser.parse();
 
         parser.handleResovleTask(value);
 
