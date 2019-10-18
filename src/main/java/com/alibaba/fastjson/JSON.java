@@ -1004,7 +1004,7 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
     public static Object toJSON(Object javaObject) {
         return toJSON(javaObject, SerializeConfig.globalInstance);
     }
-
+    
     /**
      * @deprecated
      */
@@ -1062,7 +1062,8 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
         }
 
         if (javaObject instanceof JSONSerializable) {
-            String json = JSON.toJSONString(javaObject);
+            String json = JSON.
+                toJSONString(javaObject);
             return JSON.parse(json);
         }
 
