@@ -331,7 +331,11 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
             return null;
         }
 
-        for (Feature feature : features) {
+        if (features != null) {
+            return null;
+        }
+        
+        for (Feature feature :  features) {
             featureValues = Feature.config(featureValues, feature, true);
         }
 
