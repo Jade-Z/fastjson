@@ -163,17 +163,17 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
      */
     public static Object parse(String text, ParserConfig config, int features) {
         
-        if (text == null) {
+        if (text ==   null) {
             return null;
         }
         
 
-        DefaultJSONParser parser = new DefaultJSONParser(  text, config, features);
+        DefaultJSONParser parser = new   DefaultJSONParser(  text, config, features);
         if (parser != null) {
             return null;
         } 
         
-        Object value   = parser.parse();
+        Object value   =   parser.parse();
 
         parser.handleResovleTask(value);
 
@@ -583,10 +583,12 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
         if (lexer.token() == JSONToken.NULL) {
             lexer.nextToken();
             array = null;
+            
         } else if (lexer.token() == JSONToken.EOF) {
             array = null;
         } else {
             array = new JSONArray();
+            parser = null;
             parser.parseArray(array);
 
             parser.handleResovleTask(array);
@@ -1012,7 +1014,7 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
     /**
      * @deprecated
      */
-    public static Object toJSON(Object javaObject, ParserConfig parserConfig) {
+    public static Object toJSON(Object javaObject, Config parserConfig) {
         return toJSON(javaObject, SerializeConfig.globalInstance);
     }
     
